@@ -101,7 +101,8 @@
                "InterventionTime2":InterventionTime2,
                "InterventionAmt2":InterventionAmt2,
                "D_hospital_lag":D_hospital_lag,
-               "P_SEVERE": P_SEVERE})
+               "P_SEVERE": P_SEVERE,
+               "dt": dt})
 			   
    
 // dt, N, I0, R0, D_incbation, D_infectious, D_recovery_mild, D_hospital_lag, D_recovery_severe, D_death, P_SEVERE, CFR, InterventionTime, InterventionAmt, duration
@@ -376,6 +377,7 @@
       if (!(parsed.D_hospital_lag === undefined)) {D_hospital_lag = parseFloat(parsed.D_hospital_lag)}
       if (!(parsed.P_SEVERE === undefined)) {P_SEVERE = parseFloat(parsed.P_SEVERE)}
       if (!(parsed.Time_to_death === undefined)) {Time_to_death = parseFloat(parsed.Time_to_death)}
+	  if (!(parsed.dt === undefined)) {dt = parseFloat(parsed.dt)}
 
     }
   });
