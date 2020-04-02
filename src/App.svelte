@@ -59,24 +59,24 @@
 
 
   $: Time_to_death     = 32
-  $: logN              = Math.log(7e6)
+  $: logN              = Math.log(1.85e6)
   $: N                 = Math.exp(logN)
   $: I0                = 1
-  $: R0                = 2.2
-  $: D_incbation       = 5.2       
+  $: R0                = 3
+  $: D_incbation       = 7       
   $: D_infectious      = 2.9 
-  $: D_recovery_mild   = (14 - 2.9)  
-  $: D_recovery_severe = (31.5 - 2.9)
+  $: D_recovery_mild   = (14 - D_infectious)  
+  $: D_recovery_severe = (31.5 - D_infectious)
   $: D_hospital_lag    = 5
   $: D_death           = Time_to_death - D_infectious 
-  $: CFR               = 0.02  
-  $: InterventionTime  = 60  
-  $: OMInterventionAmt = 0.3
+  $: CFR               = 0.03  
+  $: InterventionTime  = 35  
+  $: OMInterventionAmt = 0.6
   $: InterventionAmt   = 1 - OMInterventionAmt
-  $: InterventionTime1  = 110  
+  $: InterventionTime1  = 90  
   $: OMInterventionAmt1 = 0.8
   $: InterventionAmt1   = 1 - OMInterventionAmt1
-  $: InterventionTime2  = 170  
+  $: InterventionTime2  = 150  
   $: OMInterventionAmt2 = 0.6
   $: InterventionAmt2   = 1 - OMInterventionAmt2
   $: Time              = 220
@@ -369,6 +369,10 @@
       if (!(parsed.CFR === undefined)) {CFR = parseFloat(parsed.CFR)}
       if (!(parsed.InterventionTime === undefined)) {InterventionTime = parseFloat(parsed.InterventionTime)}
       if (!(parsed.InterventionAmt === undefined)) {InterventionAmt = parseFloat(parsed.InterventionAmt)}
+	  if (!(parsed.InterventionTime1 === undefined)) {InterventionTime1 = parseFloat(parsed.InterventionTime1)}
+      if (!(parsed.InterventionAmt1 === undefined)) {InterventionAmt1 = parseFloat(parsed.InterventionAmt1)}
+	  if (!(parsed.InterventionTime2 === undefined)) {InterventionTime2 = parseFloat(parsed.InterventionTime2)}
+      if (!(parsed.InterventionAmt2 === undefined)) {InterventionAmt2 = parseFloat(parsed.InterventionAmt2)}
       if (!(parsed.D_hospital_lag === undefined)) {D_hospital_lag = parseFloat(parsed.D_hospital_lag)}
       if (!(parsed.P_SEVERE === undefined)) {P_SEVERE = parseFloat(parsed.P_SEVERE)}
       if (!(parsed.Time_to_death === undefined)) {Time_to_death = parseFloat(parsed.Time_to_death)}
